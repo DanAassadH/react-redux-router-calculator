@@ -1,13 +1,89 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(237, 186, 177, 0.9335084375547094) 50%
+  );
+
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+h1,
+h2 {
+  text-align: left;
+  color: rgb(76, 35, 114);
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+form {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3%;
+  padding-bottom: 2%;
+  padding-right: 5%;
+}
+
+label {
+  background-color: rgb(76, 35, 114);
+  padding: 1%;
+  width: fit-content;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+input[type="text"],
+select {
+  padding: 5px 5px;
+  margin: 8px 0;
+  width: 25%;
+  font-size: 14px;
+}
+
+input[type="submit"],
+input[type="button"] {
+  background-color: #69b1c4;
+  color: #fff;
+  padding: 5px;
+  margin: 2px 0;
+  border: 2;
+  width: fit-content;
+  cursor: pointer;
+}
+
+p {
+  background-color: rgb(76, 35, 114);
+  padding: 1%;
+  width: fit-content;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+#expression {
+  width: 55%;
+}
+
+.simple {
+  float: left;
+  width: 50%;
+  border-right: 3;
+  border-color: blue;
+}
+.complex {
+  float: left;
+  width: 50%;
 }
