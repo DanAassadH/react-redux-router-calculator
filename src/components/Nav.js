@@ -14,6 +14,9 @@ function Nav() {
             <Link to="/calculator">Calculator</Link>
           </li>
           <li>
+            <Link to="/expressionCalculator">Expression Calculator</Link>
+          </li>
+          <li>
             <Link to="/list">Previous Calculations</Link>
           </li>
         </ul>
