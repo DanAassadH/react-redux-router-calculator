@@ -17,8 +17,6 @@ body {
   margin-right: 20%;
 }
 
-
-
 h1,
 h2 {
   text-align: left;
@@ -86,4 +84,35 @@ p {
 .complex {
   float: left;
   width: 50%;
+}
+
+nav ul{
+  padding-inline-start: 0px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+ 
+}
+
+nav li{
+  padding: 10px 20px 5px 20px;
+  font-style: normal;
+}
+
+.calculator-nav
+{
+  background-color: rgb(76, 35, 114);
+  width: fit-content;
+}
+
+a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+li{
+  list-style: none;
+  font-style: oblique;
+  padding-bottom: 10px;
 }

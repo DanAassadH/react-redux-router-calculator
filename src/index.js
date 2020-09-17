@@ -13,6 +13,7 @@ import OldResultsList from "./components/OldResultsList";
 import Nav from "./components/Nav";
 
 import resultReducer from "./reducers/resultList";
+import Home from "./components/Home";
 
 const store = createStore(
   resultReducer,
@@ -23,7 +24,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <Nav />
-      <Route path="/" component={Calculator} />
+      <Route path="/" component={Home} exact />
+      <Route path="/calculator" component={Calculator} />
       <Route path="/list" component={OldResultsList} />
     </Router>
   </Provider>,

@@ -1,42 +1,39 @@
 import React, { useState } from "react"; // https://reactjs.org/docs/hooks-state.html
-import {connect} from 'react-redux';
-import addNewResult from '../actions/resultList';
+import { connect } from "react-redux";
+import addNewResult from "../actions/resultList";
 
 function DisplayCalculator(props) {
   /* Initialize hooks */
   const [firstNumber, getFirstNumber] = useState("");
   const [secondNumber, getSecondNumber] = useState("");
   const [operation, getOperation] = useState("+");
-  const [result, getResult] = useState('0');
+  const [result, getResult] = useState("0");
   let calculatedValue = 0;
-  
 
   /* Function called on submit button press */
   const calculateMathOperation = (event) => {
-    
     event.preventDefault();
     try {
       if (isNaN(firstNumber) || isNaN(secondNumber)) {
         throw new Error("Please Enter a Number");
       } else {
         calculatedValue = calculation(firstNumber, operation, secondNumber);
-        getResult(`Result of ${firstNumber} ${operation} ${secondNumber} is ${calculatedValue} `);
+        getResult(
+          `Result of ${firstNumber} ${operation} ${secondNumber} is ${calculatedValue} `
+        );
         const resultStatement = `${firstNumber} ${operation} ${secondNumber} = ${calculatedValue} `;
         props.dispatch(addNewResult(resultStatement));
-
       }
     } catch (err) {
       alert(err.message);
     }
 
-    getFirstNumber('');
-    getSecondNumber('');
-
+    getFirstNumber("");
+    getSecondNumber("");
   };
 
   return (
     <>
-      <h1>Welcome to my calculator !</h1>
       <div className="simple">
         <h2>Simple Calculator</h2>
 
@@ -46,6 +43,7 @@ function DisplayCalculator(props) {
           <input
             type="text"
             id="first-number"
+            autocomplete="off"
             value={firstNumber}
             onChange={(e) => {
               getFirstNumber(e.target.value);
@@ -73,6 +71,7 @@ function DisplayCalculator(props) {
           <input
             type="text"
             id="second-number"
+            autocomplete="off"
             value={secondNumber}
             onChange={(e) => {
               getSecondNumber(e.target.value);
@@ -108,4 +107,6 @@ function calculation(firstNumber, operation, secondNumber) {
   return result;
 }
 
-export default connect(state=>{return{someResult:state}})(DisplayCalculator);
+export default connect((state) => {
+  return { someResult: state };
+})(DisplayCalculator);
